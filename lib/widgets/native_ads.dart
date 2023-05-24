@@ -68,7 +68,7 @@ class NativeAd extends StatelessWidget {
                                         "Ad",
                                         style: TextStyle(
                                           fontSize: 11,
-                                          color: Colors.black45,
+                                          color: Colors.white,
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
