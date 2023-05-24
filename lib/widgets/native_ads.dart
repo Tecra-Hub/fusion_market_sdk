@@ -60,7 +60,7 @@ class NativeAd extends StatelessWidget {
                                   Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(5),
-                                      color: Colors.white.withOpacity(0.5),
+                                      color: Colors.red,
                                     ),
                                     child: const Padding(
                                       padding: EdgeInsets.all(4.0),
