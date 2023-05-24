@@ -6,12 +6,18 @@ class NativeAd extends StatelessWidget {
   final String title;
   final String description;
   final String imageUrl;
+  final TextStyle? titleStyle;
+  final BoxDecoration? buttonDecoration;
+  final TextStyle? buttonStyle;
   final VoidCallback onTap;
 
   const NativeAd({
     super.key,
     required this.title,
     required this.description,
+    this.titleStyle,
+    this.buttonDecoration,
+    this.buttonStyle,
     required this.imageUrl,
     required this.onTap,
   });
@@ -89,10 +95,13 @@ class NativeAd extends StatelessWidget {
                             children: [
                               Text(
                                 title,
-                                style: const TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: titleStyle ??
+                                    const TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                               ),
                               Text(
                                 description,
@@ -116,14 +125,19 @@ class NativeAd extends StatelessWidget {
                 child: Container(
                   height: 50,
                   width: double.infinity,
-                  decoration: const BoxDecoration(color: Colors.blue),
-                  child: const Center(
+                  decoration: buttonDecoration ??
+                      BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                  child: Center(
                       child: Text(
                     "Read the Ebook",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: buttonStyle ??
+                        const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                        ),
                   )),
                 ),
               )
