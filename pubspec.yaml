@@ -14,9 +14,7 @@ dependencies:
   http:
   url_launcher: ^6.1.11
   google_sign_in: ^6.1.4
-  flutter_web_auth_2: ^2.1.4
-  webview_flutter: ^4.2.2
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
