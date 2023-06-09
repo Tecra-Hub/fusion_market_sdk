@@ -33,11 +33,11 @@
         <activity
              android:name="com.linusu.flutter_web_auth_2.CallbackActivity"
             android:exported="true">
-            <intent-filter android:label="flutter_web_auth_2">
+            <intent-filter android:label="example">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="com.app.example" />
+                <data android:scheme="fusione" />
             </intent-filter>
         </activity>
 

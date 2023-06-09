@@ -7,10 +7,11 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
 
 class Instance {
-  Future<Profile?> signInWithGoogle(BuildContext context) async {
+  Future<String?> signInWithGoogle(BuildContext context) async {
     try{
       GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
-      GoogleSignInAccount? ac= await _googleSignIn.signInSilently();
+      GoogleSignInAccount? ac= await _googleSignIn.signIn();
+
 
       var response = await http.post(
           Uri.parse("$url/api/auth/google"),
@@ -27,7 +28,7 @@ class Instance {
         return null;
       }
 
-      return Profile(email: ac.email);
+      return res["token"];
     }catch(e){
 
       return null;
